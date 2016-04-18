@@ -146,5 +146,4 @@ You can ```@import "mixin"``` into a less file.
     ```
 
 
-
-Thanks to [mixinsless](http://mixinsless.com/ ) and [compass-flexbox](https://github.com/stevenbenisek/compass-flexbox). Without them, we would have waste some time to find proper snippet.
+Thanks to [mixinsless](http://mixinsless.com/ ) and [compass-flexbox](https://github.com/stevenbenisek/compass-flexbox). Without them, we would have waste some time to build proper snippet.
