@@ -1,0 +1,366 @@
+// ------------------------//
+// border radius
+.rounded(@radius: 9999px) {
+  -webkit-border-radius:@radius;
+  border-radius:@radius;
+  -webkit-background-clip:padding-box;
+  background-clip:padding-box;
+}
+.border-radius(@topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0) {
+  -webkit-border-top-left-radius:@topleft;
+  -webkit-border-top-right-radius:@topright;
+  -webkit-border-bottom-right-radius:@bottomright;
+  -webkit-border-bottom-left-radius:@bottomleft;
+  border-top-left-radius:@topleft;
+  border-top-right-radius:@topright;
+  border-bottom-right-radius:@bottomright;
+  border-bottom-left-radius:@bottomleft;
+  -webkit-background-clip:padding-box;
+  background-clip:padding-box;
+}
+
+
+// ------------------------//
+// perfectly center
+.flex-center-middle() {
+  .flex-wrapper();
+  .flex-justify-content("center");
+  .flex-align-items("center");
+}
+
+
+/* Although, we provide the flex compatible code snippet, we still recommand you 
+ * to use Postcss to deal with this case, and the recommanded gulp plugin:
+ * https://github.com/targetkiller/postcss-flexadapter
+ */
+
+// flexbox
+.flex-wrapper() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-reverse(@orient: horizontal) {
+  -webkit-box-orient: @orient;
+  -moz-box-orient: @orient;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.flex-col() {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+// gap between child ele
+.flex-justify-content(@jc) when (@jc = "space-between"){
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.flex-justify-content(@jc) when (@jc = "space-around"){
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+.flex-justify-content(@jc) when (@jc = "center"){
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.flex-justify-content(@jc) when (@jc = "flex-start"){
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+.flex-justify-content(@jc) when (@jc = "flex-end"){
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+// align between child ele
+.flex-align-items(@ai) when (@ai = 'flex-start'){
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.flex-align-items(@ai) when (@ai = 'flex-end'){
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+.flex-align-items(@ai) when (@ai = 'center'){
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-align-items(@ai) when (@ai = 'baseline'){
+  -webkit-box-align: baseline;
+  -moz-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+.flex-align-items(@ai) when (@ai = 'stretch'){
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+// flex-num : x
+.flex-item(@item:1) {
+  min-width: 0;
+
+  -webkit-box-flex: @item;
+  -moz-box-flex: @item;
+  -webkit-flex-grow: @item;
+  -ms-flex-grow: @item;
+  flex-grow: @item;
+  -webkit-flex: @item;
+  -ms-flex: @item;
+  flex: @item;
+}
+
+
+// ------------------------//
+// perfectly fill in parent box
+.fill-in-box(@zindex: 0) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: @zindex;
+}
+// traditional center or middle
+.pos-center-middle(@cm) when (@cm = 'cm'){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  .transform(translate(-50%, -50%));
+}
+.pos-center-middle(@cm) when (@cm = 'c'){
+  position: absolute;
+  left: 50%;
+  .transform(translateX(-50%));
+}
+.pos-center-middle(@cm) when (@cm = 'm'){
+  position: absolute;
+  top: 50%;
+  .transform(translateY(-50%));
+}
+.pos-center-middle(@w, @h) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin-left: -(@w/2);
+  margin-top: -(@h/2);
+}
+
+
+// ------------------------//
+// Transform
+.transform(@arguments) {
+  -webkit-transform:@arguments;
+  transform:@arguments;
+}
+// Transform rotation
+.rotation(@deg:5deg) {
+  -webkit-transform:rotate(@deg);
+  transform:rotate(@deg);
+}
+// Transform scale
+.scale(@ratio:1.5) {
+  -webkit-transform:scale(@ratio);
+  transform:scale(@ratio);
+}
+// Translate
+.translate(@x:0, @y:0) {
+  -webkit-transform:translate(@x, @y);
+  transform:translate(@x, @y);
+}
+// Translate3d
+.translate3d(@x:0, @y:0, @z:0) {
+  -webkit-transform:translate3d(@x, @y, @z);
+  transform:translate3d(@x, @y, @z);
+}
+
+
+
+// ------------------------//
+// animation
+.animation(@anim){
+  -webkit-animation: @anim;
+  animation: @anim;
+}
+.animation-duration(@animation-duration) {
+  -webkit-animation-duration:@animation-duration;
+  animation-duration:@animation-duration;
+}
+.animation-delay(@animation-delay) {
+  -webkit-animation-delay:@animation-delay;
+  animation-delay:@animation-delay;
+}
+.animation-timing-function(@af){
+  -webkit-animation-timing-function: @af;
+  animation-timing-function: @af;
+}
+
+
+
+
+// ------------------------//
+// tansition
+.transition(@transition) {
+  -webkit-transition:@transition;
+  transition:@transition;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration:@transition-duration;
+  transition-duration:@transition-duration;
+}
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay:@transition-delay;
+  transition-delay:@transition-delay;
+}
+.transition-timing-function(@tf){
+  -webkit-transition-timing-function: @tf;
+  transition-timing-function: @tf;
+}
+
+
+
+// -------------------------//
+// text-overflow ellipsis
+.text-ellipsis(@w: 100%) {
+  width: @w;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// word break
+.word-break() {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+// No wrap
+.no-wrap() {
+  word-break: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+
+
+// -------------------------//
+// box-sizing
+.box-sizing(@bs: border-box){
+  -webkit-box-sizing: @bs;
+  box-sizing: @bs;
+}
+
+// -------------------------//
+// background
+.background-size(@bs: cover){
+  -webkit-background-size: @bs;
+  background-size: @bs;
+}
+
+
+// -------------------------//
+// gradient
+.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+  .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
+
+  @prefix  : extract(@prefixes, @index);
+  @dir-old : 90 - (@dir);
+
+  background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+  & when ( @index = length(@prefixes) ) {
+    background-image: ~"@{type}-gradient(@{dir}, @{colors})";
+  }
+}
+
+
+// -------------------------//
+// triangle
+.triangle(@direction: down, @size: 10px, @color: #000){
+  display: inline-block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.triangle(@direction: down, @size: 10px, @color: #000) when (@direction = down){
+  border-color: @color transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+  border-width: @size @size 0 @size;
+}
+.triangle(@direction: down, @size: 10px, @color: #000) when(@direction = left){
+  border-color: transparent @color transparent transparent;
+  border-style: dashed solid dashed dashed;
+  border-width: @size @size @size 0;
+}
+.triangle(@direction: down, @size: 10px, @color: #000) when(@direction = up){
+  border-color: transparent transparent @color transparent;
+  border-style: dashed dashed solid dashed;
+  border-width: 0 @size @size @size;
+}
+.triangle(@direction: down, @size: 10px, @color: #000) when(@direction = right){
+  border-color: transparent transparent transparent @color;
+  border-style: dashed dashed dashed solid;
+  border-width: @size 0 @size @size;
+}
+
+
+// -------------------------//
+// box-shadow
+.box-shadow(@arguments) {
+  -webkit-box-shadow:@arguments;
+  box-shadow:@arguments;
+}
+// Box inner border
+.inner-border(@width: 1px, @color: #000) {
+  -webkit-box-shadow:inset 0 0 0 @width @color;
+  box-shadow:inset 0 0 0 @width @color;
+}
+// Box shadow inset
+.inner-shadow(@horizontal: 0, @vertical: 1px, @blur: 2px, @alpha: 0.4) {
+  -webkit-box-shadow:inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow:inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+// normal shadow
+.normal-shadow(@horizontal: 0, @vertical: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow:@horizontal @vertical  @blur rgba(0, 0, 0, @alpha);
+  box-shadow:@horizontal @vertical  @blur rgba(0, 0, 0, @alpha);
+}
