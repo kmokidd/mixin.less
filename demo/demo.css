@@ -1,0 +1,131 @@
+@import '../reset.css';
+/* Although, we provide the flex compatible code snippet, we still recommand you 
+ * to use Postcss to deal with this case, and the recommanded gulp plugin:
+ * https://github.com/targetkiller/postcss-flexadapter
+ */
+html,
+body {
+  min-height: 100%;
+}
+.demo-wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+.demo-wrapper .header {
+  margin-bottom: 20px;
+}
+.demo-wrapper .exp-wrapper {
+  padding-left: 10px;
+  border-left: 2px solid #fbb;
+}
+.demo {
+  margin-bottom: 10px;
+}
+.demo .code {
+  font-size: 14px;
+  background-color: rgba(151, 151, 151, 0.2);
+  padding: 5px;
+}
+.demo .mouse {
+  width: 100px;
+  height: 100px;
+  background-color: #fcc;
+}
+.demo .mouse .inner {
+  width: 30px;
+  height: 30px;
+  background-color: #bb1;
+}
+#rounded {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#border-radius {
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#flex-center-middle {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#fill-in-box {
+  position: relative;
+  z-index: 0;
+}
+#fill-in-box .inner {
+  width: auto;
+  height: auto;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+#pos-center-middle {
+  position: relative;
+  z-index: 0;
+}
+#pos-center-middle .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#text-ellipsis .inner {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#word-break {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+#no-wrap {
+  word-break: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+#gradient {
+  background-image: -30deg-linear-gradient(#000000, #ff00ff);
+  background-image: linear-gradient(#d3af68, #ff00ff);
+}
+#triangle-down {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  border-color: #000000 transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+  border-width: 10px 10px 0 10px;
+  background-color: transparent;
+}

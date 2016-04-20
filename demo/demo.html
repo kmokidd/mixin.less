@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mixin Demo Page</title>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <div class="demo-wrapper" id="mixin">
+    <div class="header">
+      <h1 class="title">Mixin.less - Demo</h1>
+      <div class="exp-wrapper">
+        <p class="exp">This is a demo page of <a href="https://raw.githubusercontent.com/isux/mixin.less/master/mixin.less">mixin.less</a>.</p>
+        <p class="exp">You can get more information on our <a href="https://github.com/isux/mixin.less">github repo</a>.</p>
+      </div>
+    </div>
+
+    <div class="demo-list">
+        <div class="demo">
+          <pre class="code">.rounded(10px)</pre>
+          <div class="mouse" id="rounded"></div>
+        </div>
+        <div class="demo">
+          <pre class="code">.border-radius(20px, 10px, 0, 0)</pre>
+          <div class="mouse" id="border-radius"></div>
+        </div>
+        <div class="demo">
+          <pre class="code">.flex-center-middle();</pre>
+          <div class="mouse" id="flex-center-middle">
+            <div class="inner"></div>
+          </div>
+        </div>
+        <div class="demo">
+          <pre class="code">.fill-in-box();</pre>
+          <div class="mouse" id="fill-in-box">
+            This is father
+            <div class="inner">This is child</div>
+          </div>
+        </div>
+        <div class="demo">
+          <pre class="code">.pos-center-middle('cm');</pre>
+          <div class="mouse" id="pos-center-middle">
+            <div class="inner"></div>
+          </div>
+        </div>
+        <div class="demo">
+          <pre class="code">.text-ellipsis();</pre>
+          <div class="mouse" id="text-ellipsis">
+            <div class="inner">It's long long long long long long long long</div>
+          </div>
+        </div>
+        <div class="demo">
+          <pre class="code">.word-break();</pre>
+          <div class="mouse" id="word-break">You can see 中英 insertion is ok, as well.</div>
+        </div>
+        <div class="demo">
+          <pre class="code">.no-wrap();</pre>
+          <div class="mouse" id="no-wrap">You can see 中英 insertion is ok, as well.</div>
+        </div>
+        <div class="demo">
+          <pre class="code">.gradient(linear,  #f0f, rgba(211,175,104,1), 30deg)</pre>
+          <div class="mouse" id="gradient"></div>
+        </div>
+        <div class="demo">
+          <pre class="code">.triangle(down, 10px, #000)</pre>
+          <div class="mouse" id="triangle-down"></div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
