@@ -129,7 +129,7 @@ You can ```@import "mixin"``` into a less file.
     ```less
     // little triangle, usually used in bubble tip or dropdown
     // 4 directions need to be picked
-    .triangle('down'|'left'|'up'|'right', @size:10px, @color:#000)
+    .triangle(down|left|up|right, @size:10px, @color:#000)
     ```
 
 12. box-shadow
@@ -144,6 +144,5 @@ You can ```@import "mixin"``` into a less file.
     // inset box-shadow
     .inner-shadow(@horizontal: 0, @vertical: 1px, @blur: 2px, @alpha: 0.4)
     ```
-
 
 Thanks to [mixinsless](http://mixinsless.com/ ) and [compass-flexbox](https://github.com/stevenbenisek/compass-flexbox). Without them, we would have waste some time to build proper snippet.
